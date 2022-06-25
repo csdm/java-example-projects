@@ -1,4 +1,4 @@
-package it.claudiodimauro.ApiDataFetch;
+package it.claudiodimauro.ApiDataFetch.models;
 
 public class Company {
 	private String name;
