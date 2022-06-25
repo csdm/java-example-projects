@@ -1,8 +1,5 @@
-# ApiDataFetch
-Maven project generted with com.a9ski:quick-start archetype
+# ApiReadData | fetch-data-from-rest-api
+Progetto Maven generato per prelevare tramite Java i dati da una chiamata ad una Rest API.
+  
 
-
-# Development guide
-1. Install pre-commit (https://pre-commit.com/)
-2. Install the pr-commit hook by executing `pre-commit install` inside project directory
-3. Run against all files in the project: `pre-commit run --all-files`
+- Ricerca dati da response API sfruttando l'ObjectMapper della libreria Jackson.

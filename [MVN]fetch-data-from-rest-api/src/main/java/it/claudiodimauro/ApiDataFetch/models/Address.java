@@ -55,6 +55,13 @@ public class Address {
 	public void setGeo(Geo geo) {
 		this.geo = geo;
 	}
+
+	//Sovrascrivo il toString per definire il modo in cui voglio che venga stampato
+	//l'oggetto Address
+	@Override
+	public String toString() {
+		return street + ", " + suite + " - " + zipcode + " - " + city + " | geo=["+ geo + "]"; //sfrutta il toString della classe Geo
+	}
 	
 	
 }

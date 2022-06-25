@@ -6,22 +6,54 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-import javax.net.ssl.HttpsURLConnection;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import it.claudiodimauro.ApiDataFetch.utils.Utility;
+
 public class ObjMapperExtractor {
 	
 	private String apiURL;
+	private String jsonString = null;
 	
 	public ObjMapperExtractor(String apiURL) {
 		this.apiURL = apiURL;
 	}
 	
-	public JsonNode fetchDataAsNode() throws MalformedURLException, IOException {
+	public JsonNode fetchDataAsNode() {		
+		try {
+			jsonString = connectAndRetrieve(apiURL);
+		} catch (MalformedURLException ex) {
+			ex.getMessage();
+		} catch (IOException ex) {
+			ex.getMessage();
+		} catch (Exception ex) {
+			ex.getMessage();
+		}		
+		
+		String mockedJsonStr = "{ \"name\" : \"Raja\", \"age\" : 30," +
+                " \"technologies\" : [\"Java\", \"Scala\", \"Python\"]," +
+                " \"nestedObject\" : { \"field\" : \"value\" } }";		
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		JsonNode node = null;
+		
+		try {
+			node = objectMapper.readValue(jsonString, JsonNode.class);
+		} catch ( JsonMappingException ex) {
+			ex.getMessage();
+		} catch ( JsonProcessingException ex) {
+			ex.getMessage();
+		}
+		
+		return node;
+	}
+	
+	private String connectAndRetrieve(String apiUrl)  throws MalformedURLException, IOException  {		
 		URL url = new URL(apiURL);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("GET");
@@ -45,13 +77,11 @@ public class ObjMapperExtractor {
 		
 		scanner.close();
 		
-		String jsonString = tmpString.toString();
-		
-		ObjectMapper objectMapper = new ObjectMapper();
-		
-		JsonNode node = objectMapper.readValue(jsonString, JsonNode.class);
-		
-		return node;
+		return tmpString.toString();
+	}
+	
+	public boolean isReturningJsonArray() {
+		return Utility.isJsonArray(jsonString);
 	}
 	
 }

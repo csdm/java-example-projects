@@ -36,5 +36,11 @@ public class Company {
 		this.bs = bs;
 	}
 	
+	//Sovrascrivo il toString per definire il modo in cui voglio che venga stampato
+	//l'oggetto Company
+	@Override
+	public String toString() {
+		return name + " - *" + catchPhrase +"* - " + bs;
+	}
 	
 }

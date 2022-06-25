@@ -25,6 +25,13 @@ public class Geo {
 	public void setLng(String lng) {
 		this.lng = lng;
 	}
+
+	//Sovrascrivo il toString per definire il modo in cui voglio che venga stampato
+	//l'oggetto Geo
+	@Override
+	public String toString() {
+		return "lat: " + lat + ", lng:" + lng;
+	}
 	
 	
 }
