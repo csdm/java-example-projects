@@ -1,4 +1,4 @@
-package it.claudiodimauro.ApiReadData;
+package it.claudiodimauro.ApiDataFetch;
 
 public class Company {
 	private String name;

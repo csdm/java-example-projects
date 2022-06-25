@@ -1,4 +1,4 @@
-package it.claudiodimauro.ApiReadData;
+package it.claudiodimauro.ApiDataFetch;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -61,13 +61,21 @@ public class App {
 				user.setName(userData.get("name").toString());
 				user.setUsername(userData.get("username").toString());
 				user.setEmail(userData.get("email").toString());
-				user.setAddress(new Address(
-						userData.get("address").get("street").toString(), //come prelevare oggetti innestat?
-						null,
-						null,
-						null,
-						null
-						));
+				
+				//JSONArray addressObj = (JSONArray) parser.parse(String.valueOf(userData.get("address")));
+//				JSONObject addressData = (JSONObject) addressObj.get(i);
+//				
+//				
+//				user.setAddress(new Address(
+//						addressData.get("city").toString(), //come prelevare oggetti innestat?
+//						null,
+//						null,
+//						null,
+//						null
+//						));
+				
+				
+				
 				
 				userList.add(user);
 			}
