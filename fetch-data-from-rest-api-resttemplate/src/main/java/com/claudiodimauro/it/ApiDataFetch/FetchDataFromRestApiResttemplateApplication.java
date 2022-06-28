@@ -11,15 +11,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FetchDataFromRestApiResttemplateApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(FetchDataFromRestApiResttemplateApplication.class, args);
-		
-		
-		
+		SpringApplication.run(FetchDataFromRestApiResttemplateApplication.class, args);	
 	}
 	
 	@PostConstruct
-	public void boh() {
-		System.out.println("Boh post");
+	public void start() {
+		System.out.println("**********************************************\n"
+						 + "********        Starting up...        ********\n"
+						 + "**********************************************\n\n");
 	}
 
 }

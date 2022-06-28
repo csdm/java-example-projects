@@ -4,6 +4,9 @@ public class Geo {
 	private String lat;
 	private String lng;
 	
+	public Geo() {
+	}
+	
 	public Geo(String lat, String lng) {
 		super();
 		this.lat = lat;

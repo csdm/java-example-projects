@@ -74,5 +74,17 @@ public class User {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
-	
+
+	@Override
+	public String toString() {
+		return 		"ID: " + id + "\n"
+				+   "Name: " + name + "\n"
+				+   "Username: " + username + "\n"
+				+   "Email: " + email + "\n"
+				+   "Address: " + address.toString() + "\n"	//sfrutta il toString della classe Address
+				+   "Phone: " + phone + "\n"
+				+   "Website: " + website + "\n"
+				+   "Company: " + company.toString() + "\n" //sfrutta il toString della classe Company
+				+ "****************** ******************\n****************** ******************";
+	}
 }

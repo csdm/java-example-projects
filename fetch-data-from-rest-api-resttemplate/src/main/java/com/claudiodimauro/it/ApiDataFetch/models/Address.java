@@ -7,6 +7,9 @@ public class Address {
 	private String zipcode;
 	private Geo geo;
 	
+	public Address() {
+	}
+	
 	public Address(String street, String suite, String city, String zipcode, Geo geo) {
 		super();
 		this.street = street;
