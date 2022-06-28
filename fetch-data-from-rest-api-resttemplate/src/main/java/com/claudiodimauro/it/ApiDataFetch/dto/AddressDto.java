@@ -6,7 +6,7 @@ public class AddressDto {
 	private String city;
 	private String zipcode;
 	private GeoDto geo;
-	
+
 	public AddressDto(String street, String suite, String city, String zipcode, GeoDto geo) {
 		super();
 		this.street = street;
@@ -62,6 +62,6 @@ public class AddressDto {
 	public String toString() {
 		return street + ", " + suite + " - " + zipcode + " - " + city + " | geo=["+ geo + "]"; //sfrutta il toString della classe Geo
 	}
-	
-	
+
+
 }

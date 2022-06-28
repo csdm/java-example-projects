@@ -2,9 +2,7 @@ package com.claudiodimauro.it.ApiDataFetch.utils;
 
 public interface Constants {
 	
-	public interface URLs {
+	public interface url {
 		String USERS = "https://jsonplaceholder.typicode.com/users";
-		String POSTS = "https://jsonplaceholder.typicode.com/posts";
-		String PHOTOS = "https://jsonplaceholder.typicode.com/photos";
 	}
 }

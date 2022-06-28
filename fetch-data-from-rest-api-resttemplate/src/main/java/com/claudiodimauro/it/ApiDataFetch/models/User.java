@@ -9,10 +9,10 @@ public class User {
 	private String phone;
 	private String website;
 	private Company company;
-	
+
 	public User() {		
 	}
-	
+
 	public User(int id, String name, String username, String email, Address address, String phone, String website,
 			Company company) {
 		super();
@@ -25,7 +25,7 @@ public class User {
 		this.website = website;
 		this.company = company;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

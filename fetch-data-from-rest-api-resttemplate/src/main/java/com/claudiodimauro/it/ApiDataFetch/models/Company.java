@@ -4,10 +4,10 @@ public class Company {
 	private String name;
 	private String catchPhrase;
 	private String bs;
-	
+
 	public Company() {
 	}
-	
+
 	public Company(String name, String catchPhrase, String bs) {
 		super();
 		this.name = name;
@@ -38,12 +38,12 @@ public class Company {
 	public void setBs(String bs) {
 		this.bs = bs;
 	}
-	
+
 	//Sovrascrivo il toString per definire il modo in cui voglio che venga stampato
 	//l'oggetto Company
 	@Override
 	public String toString() {
 		return name + " - *" + catchPhrase +"* - " + bs;
 	}
-	
+
 }

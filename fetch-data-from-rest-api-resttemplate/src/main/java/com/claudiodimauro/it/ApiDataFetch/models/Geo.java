@@ -3,10 +3,10 @@ package com.claudiodimauro.it.ApiDataFetch.models;
 public class Geo {
 	private String lat;
 	private String lng;
-	
+
 	public Geo() {
 	}
-	
+
 	public Geo(String lat, String lng) {
 		super();
 		this.lat = lat;
@@ -35,6 +35,6 @@ public class Geo {
 	public String toString() {
 		return "lat: " + lat + ", lng:" + lng;
 	}
-	
-	
+
+
 }

@@ -9,10 +9,10 @@ public class UserDto {
 	private String phone;
 	private String website;
 	private CompanyDto company;
-	
+
 	public UserDto() {		
 	}
-	
+
 	public UserDto(int id, String name, String username, String email, AddressDto address, String phone, String website,
 			CompanyDto company) {
 		super();
@@ -25,7 +25,7 @@ public class UserDto {
 		this.website = website;
 		this.company = company;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -74,5 +74,5 @@ public class UserDto {
 	public void setCompany(CompanyDto company) {
 		this.company = company;
 	}
-	
+
 }

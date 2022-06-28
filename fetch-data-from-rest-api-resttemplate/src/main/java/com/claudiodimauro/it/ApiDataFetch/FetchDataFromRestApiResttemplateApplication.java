@@ -20,5 +20,4 @@ public class FetchDataFromRestApiResttemplateApplication {
 						 + "********        Starting up...        ********\n"
 						 + "**********************************************\n\n");
 	}
-
 }

@@ -3,7 +3,7 @@ package com.claudiodimauro.it.ApiDataFetch.dto;
 public class GeoDto {
 	private String lat;
 	private String lng;
-	
+
 	public GeoDto(String lat, String lng) {
 		super();
 		this.lat = lat;
@@ -32,6 +32,6 @@ public class GeoDto {
 	public String toString() {
 		return "lat: " + lat + ", lng:" + lng;
 	}
-	
-	
+
+
 }

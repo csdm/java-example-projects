@@ -6,10 +6,10 @@ public class Address {
 	private String city;
 	private String zipcode;
 	private Geo geo;
-	
+
 	public Address() {
 	}
-	
+
 	public Address(String street, String suite, String city, String zipcode, Geo geo) {
 		super();
 		this.street = street;
@@ -65,6 +65,6 @@ public class Address {
 	public String toString() {
 		return street + ", " + suite + " - " + zipcode + " - " + city + " | geo=["+ geo + "]"; //sfrutta il toString della classe Geo
 	}
-	
-	
+
+
 }

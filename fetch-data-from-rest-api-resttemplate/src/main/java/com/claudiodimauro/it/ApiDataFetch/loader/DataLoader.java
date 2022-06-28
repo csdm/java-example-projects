@@ -11,13 +11,13 @@ import com.claudiodimauro.it.ApiDataFetch.utils.Constants;
 
 @Component
 public class DataLoader implements ApplicationRunner {
-	
+
 	@Autowired
 	RestService service;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		for(User u : service.getAndMapData(Constants.URLs.USERS)) {
+		for(User u : service.getUsersData(Constants.url.USERS)) {
 			System.out.println(u.toString());
 		}
 	}

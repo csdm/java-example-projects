@@ -19,23 +19,22 @@ import com.claudiodimauro.it.ApiDataFetch.models.User;
 public class RestService {
 
 	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplate restTemplate;	
 	
-	
-	
-	
-	public List<User> getAndMapData(String endpoint) {
+	/**
+	 * @param string that represents the API endpoint
+	 * @return a list of User
+	 */
+	public List<User> getUsersData(String endpoint) {
 		List<User> userList = new ArrayList<>();		
 		
 		UserDto[] users = getDataFromApi(endpoint);
 		
-		for(UserDto userDto : users) {
-			
+		for(UserDto userDto : users) {			
 			userList.add(mapFromDto(userDto));
 		}
 		
-		return userList;
-		
+		return userList;		
 	}
 	
 	private UserDto[] getDataFromApi(String endpoint) {
