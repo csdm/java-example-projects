@@ -1,5 +1,4 @@
 # ApiReadData | fetch-data-from-rest-api
-Progetto Maven generato per prelevare tramite Java i dati da una chiamata ad una Rest API.
+Maven project created to fetch data from Rest API call using Java
   
-
-- Ricerca dati da response API sfruttando l'ObjectMapper della libreria Jackson.
+- It research the data from an API using the ObjectMapper from Jackson library.
