@@ -143,3 +143,8 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,eclipse,macos,java
+
+./fetch-data-from-rest-api/Logs
+./fetch-data-from-rest-api-resttemplate/Logs
+./MD5-from-to-converter/Logs
+./spring-kafka-rest-controller/Logs

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: "Spring-Kafka-Rest-Controller"    
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /try-api.html
+    
+logging:
+  file:
+    name: ./Logs/SKRC.log
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS}  [%-1level] [%logger{100}]  **MSG: %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS}  [%-1level] [%logger{100}]  **MSG: %msg%n"
+    
+kafka:
+  server:
+    endpoint: "" #no bootstrap server available for enviroments different from dev
+  topic: CDM-PROD-JAVA_EXAMPLE_PROJECT-SKRC-TOPIC    
