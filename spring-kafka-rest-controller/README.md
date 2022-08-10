@@ -18,3 +18,5 @@ The message travel on a DTO that represents the JSON used in the request on the 
 The `message` field is a required string that represent the message to send on the topic; the `senderId` represents an identification code for the user who call the api. This field could be null or blank but in this case a default id will be assigned to the sender.
 
 All the needed configuration are written in the `application.yml` and in this Development Environment overwriter, `application-dev.yml`.
+
+There are no particular configurations for Kafka broker and Kafka topic.
