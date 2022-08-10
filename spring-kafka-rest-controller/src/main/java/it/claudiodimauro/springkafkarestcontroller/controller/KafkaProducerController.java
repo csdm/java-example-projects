@@ -37,9 +37,12 @@ public class KafkaProducerController {
 	@PostMapping(value = "/sendMessage")
 	@Operation(method = "POST", 
 	summary = "Send a message on Kafka topic", 
-	description = "The api send the specified message on the CDM-<ENV>-JAVA_EXAMPLE_PROJECT-SKRC-TOPIC topic")
+	description = "The api send the specified message on the CDM-ENV-JAVA_EXAMPLE_PROJECT-SKRC-TOPIC topic")
 	public ResponseEntity<String> sendMessage(@RequestBody MessageDTO message) {
 		logger.info("Sending message: {}", message);
+		
+		//limiting the message length to the first 10 characters in order to avoid verbose logs
+		String truncatedMessage = message.toString().length() >= 10 ? message.toString().substring(0, 10) + "..." : message.toString(); 
 		
 		if(message.getSenderId() == null) {
 			logger.info("Setting up default senderId");
@@ -53,12 +56,12 @@ public class KafkaProducerController {
 			@Override
 			public void onSuccess(SendResult<String, MessageDTO> result) {
 				status = "Message sent succesfully";
-				logger.info("Succesfully sent message = [{}...], on topic = {}, with offset = {}", message.toString().substring(0, 10), topicName, result.getRecordMetadata().offset()); //limit the message text to first 10 characters
+				logger.info("Succesfully sent message = [{}], on topic = {}, with offset = {}", truncatedMessage, topicName, result.getRecordMetadata().offset());
 			}
 
 			@Override
 			public void onFailure(Throwable ex) {
-				logger.info("Failed to send message = [{}...], error = {}", message.toString().substring(0, 10), ex.getMessage()); //limit the message text to first 10 characters
+				logger.info("Failed to send message = [{}], error = {}", truncatedMessage, ex.getMessage());
                 status = "Message sending failed";				
 			}
 		});
