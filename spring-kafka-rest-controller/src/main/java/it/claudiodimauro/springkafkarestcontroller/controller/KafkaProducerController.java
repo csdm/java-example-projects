@@ -24,7 +24,7 @@ import it.claudiodimauro.springkafkarestcontroller.dto.MessageDTO;
 public class KafkaProducerController {
 	private static final Logger logger = LoggerFactory.getLogger(KafkaProducerController.class);
 	
-	private static final UUID defaultSenderId = UUID.randomUUID();
+	private static final String defaultSenderId = UUID.randomUUID().toString();
 	
 	@Autowired
 	private KafkaTemplate<String, MessageDTO> kafkaTemplate;
@@ -44,9 +44,9 @@ public class KafkaProducerController {
 		//limiting the message length to the first 10 characters in order to avoid verbose logs
 		String truncatedMessage = message.toString().length() >= 10 ? message.toString().substring(0, 10) + "..." : message.toString(); 
 		
-		if(message.getSenderId() == null) {
+		if(message.getSenderId() == null || message.getSenderId().isBlank()) {
 			logger.info("Setting up default senderId");
-			message.setSenderId(defaultSenderId.toString() + "_sendMessage");
+			message.setSenderId(defaultSenderId + "_sendMessage");
 		}
 		
 		
